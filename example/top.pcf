@@ -3,8 +3,8 @@
 #pi side
 
 set_io clk 21
-set_io i2c_sda 139
-set_io i2c_scl 141
+set_io i2c_sda -pullup yes 139
+set_io i2c_scl -pullup yes 141
 
 
 #60 pin side
@@ -34,20 +34,20 @@ set_io sfp_tx_disable[4] 81
 set_io sfp_tx_disable[5] 98
 
 #pin7
-set_io sfp_sda[0] 20
-set_io sfp_sda[1] 33
-set_io sfp_sda[2] 47
-set_io sfp_sda[3] 63
-set_io sfp_sda[4] 87
-set_io sfp_sda[5] 99
+set_io sfp_sda[0] -pullup yes 20
+set_io sfp_sda[1] -pullup yes 33
+set_io sfp_sda[2] -pullup yes 47
+set_io sfp_sda[3] -pullup yes 63
+set_io sfp_sda[4] -pullup yes 87
+set_io sfp_sda[5] -pullup yes 99
 
 #pin6
-set_io sfp_scl[0] 22
-set_io sfp_scl[1] 34
-set_io sfp_scl[2] 48
-set_io sfp_scl[3] 64
-set_io sfp_scl[4] 88
-set_io sfp_scl[5] 101
+set_io sfp_scl[0] -pullup yes 22
+set_io sfp_scl[1] -pullup yes 34
+set_io sfp_scl[2] -pullup yes 48
+set_io sfp_scl[3] -pullup yes 64
+set_io sfp_scl[4] -pullup yes 88
+set_io sfp_scl[5] -pullup yes 101
 
 #pin5
 set_io sfp_mod_abs[0] 23

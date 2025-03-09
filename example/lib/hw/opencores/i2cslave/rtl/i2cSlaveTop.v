@@ -48,7 +48,8 @@
 module i2cSlaveTop (
   clk,
   rst,
-  sda,
+  sdaIn,
+  sdaOut,
   scl,
   myReg0,
   myReg1,
@@ -61,7 +62,8 @@ module i2cSlaveTop (
 );
 input clk;
 input rst;
-inout sda;
+input sdaIn;
+output sdaOut;
 input scl;
 output [7:0] myReg0;
 output [7:0] myReg1;
@@ -76,7 +78,8 @@ input [7:0] myReg7;
 i2cSlave u_i2cSlave(
   .clk(clk),
   .rst(rst),
-  .sda(sda),
+  .sdaIn(sdaIn),
+  .sdaOut(sdaOut),
   .scl(scl),
   .myReg0(myReg0),
   .myReg1(myReg1),

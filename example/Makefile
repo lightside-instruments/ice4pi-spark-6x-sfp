@@ -7,8 +7,8 @@ top.bin: top.v top.pcf
 	icepack top.txt top.bin
 
 load: top.bin
-	./ice4ultra96_passthrough_prog top.bin
-#	./ice4pi_prog top.bin
+#	./ice4ultra96_passthrough_prog top.bin
+	./ice4pi_prog top.bin
 #	iceprog top.bin
 
 clean:

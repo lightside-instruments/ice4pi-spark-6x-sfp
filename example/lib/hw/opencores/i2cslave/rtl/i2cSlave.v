@@ -48,7 +48,8 @@
 module i2cSlave (
   clk,
   rst,
-  sda,
+  sdaIn,
+  sdaOut,
   scl,
   myReg0,
   myReg1,
@@ -62,7 +63,8 @@ module i2cSlave (
 
 input clk;
 input rst;
-inout sda;
+input sdaIn;
+output sdaOut;
 input scl;
 output [7:0] myReg0;
 output [7:0] myReg1;
@@ -84,8 +86,6 @@ reg [`SCL_DEL_LEN-1:0] sclDelayed;
 reg [`SDA_DEL_LEN-1:0] sdaDelayed;
 reg [1:0] startStopDetState;
 wire clearStartStopDet;
-wire sdaOut;
-wire sdaIn;
 wire [7:0] regAddr;
 wire [7:0] dataToRegIF;
 wire writeEn;
@@ -96,16 +96,6 @@ reg startEdgeDet;
 
 //assign sda = (sdaOut == 1'b0) ? 1'b0 : 1'bz;
 //assign sdaIn = sda;
-
-SB_IO #(
-    .PIN_TYPE(6'b 1010_01),
-    .PULLUP(1'b 0)
-) led_io (
-    .PACKAGE_PIN(sda),
-    .OUTPUT_ENABLE(~sdaOut),
-    .D_OUT_0(sdaOut),
-    .D_IN_0(sdaIn)
-);
 
 
 // sync rst rsing edge to clk
